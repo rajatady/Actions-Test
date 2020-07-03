@@ -1,0 +1,11 @@
+li {
+    margin-bottom: 8px;
+    font-size: 14.4px;
+    font-family: "Whitney SSm A", "Whitney SSm B", "AvenirNext-Regular", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #000
+}
+
+.cke_contents {
+    height: calc(100vh - 200px) !important;
+
+}

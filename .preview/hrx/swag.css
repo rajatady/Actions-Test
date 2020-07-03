@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap");
+.swag--container {
+  font-family: "Open Sans", sans-serif;
+  background: rgba(27, 169, 76, 0.1) !important;
+  padding: 0 !important;
+}
+.swag--container summary {
+  background: rgba(27, 169, 76, 0.1) !important;
+  color: #3a424e !important;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid #1ba94c;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  margin-bottom: 0 !important;
+  outline: none;
+}
+.swag--container summary .swag--method {
+  background: #1ba94c;
+  padding: 4px 15px;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.swag--container summary .swag--endpoint {
+  margin-left: 8px;
+  font-size: 12px;
+}
+.swag--container .swag--collapsible-details {
+  padding: 0 !important;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border: 1px solid #1ba94c;
+  border-top: none;
+}
+.swag--container .swag--collapsible-details .swag--parameter-header {
+  display: flex;
+  background: white;
+  padding: 16px 24px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.swag--container .swag--collapsible-details .swag--parameter-header .swag--parameter-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container {
+  padding: 20px;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table {
+  width: 100%;
+  padding: 0 10px;
+  border-collapse: collapse;
+  border: none;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table td, .swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table th {
+  border: none;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table thead th {
+  box-sizing: border-box;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table thead .swag--col-header {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 12px 0;
+  text-align: left;
+  border-bottom: 1px solid rgba(59, 65, 81, 0.2);
+  font-family: sans-serif;
+  color: #3b4151;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table tbody {
+  border: none;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table tbody td {
+  padding: 24px 0 0;
+  vertical-align: top;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table tbody td:first-of-type {
+  max-width: 20%;
+  min-width: 6em;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table .swag--table-row td {
+  margin: 0.75em;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table .swag--col-name .swag--parameter-name {
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 0.75em;
+  color: #3b4151;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table .swag--col-name .swag--parameter-name.required {
+  font-weight: 700;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table .swag--col-name .swag--parameter-name.required span:after {
+  font-size: 10px;
+  position: relative;
+  top: -6px;
+  padding: 5px;
+  content: "required";
+  color: rgba(255, 0, 0, 0.6);
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table .swag--col-name .swag--parameter-type {
+  font-size: 12px;
+  padding: 5px 0;
+  font-family: monospace;
+  font-weight: 600;
+  color: #3b4151;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table .swag--col-name .swag--parameter-in {
+  font-size: 12px;
+  font-style: italic;
+  font-family: monospace;
+  font-weight: 600;
+  color: grey;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table .swag--col-description {
+  width: 70%;
+  margin-bottom: 2em;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table .swag--col-description .swag--model-example .swag--example-title {
+  font-size: 12px;
+  min-width: 60px;
+  padding: 0;
+  color: #3b4151;
+  font-weight: 700;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table .swag--col-description .swag--model-example .swag--example-container .swag--example {
+  padding: 16px 10px;
+  margin-left: 0;
+  border-radius: 2px;
+}
+.swag--container .swag--collapsible-details .swag--parameter-container .swag--parameter-table .swag--col-description .swag--model-example .swag--example-container .swag--content-type {
+  font-size: 12px;
+  min-width: 60px;
+  padding: 0;
+  color: #3b4151;
+  font-weight: 700;
+}
+.swag--container.swag--get-request {
+  background: rgba(9, 123, 191, 0.1) !important;
+}
+.swag--container.swag--get-request summary {
+  background: rgba(9, 123, 191, 0.1) !important;
+  border: 1px solid #097bbf;
+}
+.swag--container.swag--get-request summary .swag--method {
+  background: #097bbf;
+}
+.swag--container.swag--get-request .swag--collapsible-details {
+  border: 1px solid #097bbf;
+}
+.swag--container.swag--put-request {
+  background: rgba(255, 190, 11, 0.1) !important;
+}
+.swag--container.swag--put-request summary {
+  background: rgba(255, 190, 11, 0.1) !important;
+  border: 1px solid #ffbe0b;
+}
+.swag--container.swag--put-request summary .swag--method {
+  background: #ffbe0b;
+}
+.swag--container.swag--put-request .swag--collapsible-details {
+  border: 1px solid #ffbe0b;
+}
+.swag--container.swag--delete-request {
+  background: rgba(255, 100, 116, 0.1) !important;
+}
+.swag--container.swag--delete-request summary {
+  background: rgba(255, 100, 116, 0.1) !important;
+  border: 1px solid #ff6474;
+}
+.swag--container.swag--delete-request summary .swag--method {
+  background: #ff6474;
+}
+.swag--container.swag--delete-request .swag--collapsible-details {
+  border: 1px solid #ff6474;
+}
+
+/*# sourceMappingURL=swag.css.map */
