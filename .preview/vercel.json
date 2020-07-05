@@ -5,6 +5,6 @@
     "enabled": false
   },
   "builds": [
-    { "src": "./.preview/**", "use": "@now/static" }
+    { "src": "**", "use": "@now/static" }
   ]
 }
