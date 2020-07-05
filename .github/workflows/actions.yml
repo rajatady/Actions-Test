@@ -25,7 +25,6 @@ jobs:
           vercel-args: '--prod' #Optional
           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
-          working-directory: ./preview
       - name: preview-url
         run: |
           echo ${{ steps.vercel-action.outputs.preview-url }}
