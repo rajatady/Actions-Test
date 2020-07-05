@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+      - name: Prepare
+        run: node .preview/prepare.js
       - uses: amondnet/vercel-action@v19
         id: vercel-action
         with:
