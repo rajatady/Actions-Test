@@ -2,14 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="https://h8k-design.now.sh/css/styles.css">
+    <title>Editor</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/h8k-design@latest/dist/index.css"
     <link rel="stylesheet" type="text/css" href="./hrx/core.css"/>
     <link rel="stylesheet" type="text/css" href="./hrx/core-2.css"/>
     <link rel="stylesheet" type="text/css" href="./hrx/ckeditor-custom.css"/>
     <link rel="stylesheet" type="text/css" href="./hrx/swag.css"/>
+    <style type="text/css">
+        .scroll-prevent {
+            overflow-y: hidden;
+        }
+        #loader-container {
+            position: fixed;
+            width: 100%;
+            -webkit-backdrop-filter: saturate(180%) blur(10px);
+            backdrop-filter: saturate(180%) blur(10px);
+            background-color: hsla(0, 0%, 100%, .7) !important;
+            top: 56px;
+            height: 100%;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .loader,
+        .loader:after {
+            border-radius: 50%;
+            width: 10em;
+            height: 10em;
+        }
+
+        .loader {
+            margin: 60px auto;
+            font-size: 10px;
+            position: relative;
+            text-indent: -9999em;
+            border-top: 1.1em solid var(--primary-disabled);
+            border-right: 1.1em solid var(--primary-disabled);
+            border-bottom: 1.1em solid var(--primary-disabled);
+            border-left: 1.1em solid var(--primary-color);
+            -webkit-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-animation: load8 1.1s infinite linear;
+            animation: load8 1.1s infinite linear;
+        }
+
+        @-webkit-keyframes load8 {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes load8 {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="scroll-prevent">
 <nav class="app-header fixed layout-row align-items-center justify-content-center">
     <div class="layout-row align-items-center">
         <img alt="" src="./images/logo.svg" class="logo"/>
@@ -18,14 +82,33 @@
 </nav>
 <form class="mt-75 mx-8">
     <textarea name="editor1" id="editor1" rows="10" cols="80">
-        ##CONTENT##
+
     </textarea>
+
+    <div id="loader-container">
+        <div class="loader"></div>
+        <p>Loading Preview...</p>
+    </div>
 
     <script src="./ckeditor/ckeditor.js"></script>
     <script>
+        const initialContent = `##CONTENT##`;
+    </script>
+    <script>
         // Replace the <textarea id="editor1"> with a CKEditor
         // instance, using default configuration.
-        CKEDITOR.replace('editor1');
+        CKEDITOR.replace('editor1', {
+            on: {
+                instanceReady: function (evt) {
+                    document.getElementById('loader-container').style.visibility = 'hidden';
+                    document.body.classList.remove('scroll-prevent');
+                }
+            }
+        });
+
+        CKEDITOR.instances.editor1.setData(initialContent, function () {
+            this.checkDirty();  // true
+        });
     </script>
 </form>
 </body>
