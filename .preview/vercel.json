@@ -5,9 +5,6 @@
     "enabled": false
   },
   "builds": [
-    { "src": "./preview/**", "use": "@now/static" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "preview/$1" }
+    { "src": "**", "use": "@now/static" }
   ]
 }
